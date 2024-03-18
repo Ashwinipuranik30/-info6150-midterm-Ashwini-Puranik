@@ -94,4 +94,50 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show initial item
     showItem(currentIndex);
   });
+
+
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const submitButton = document.querySelector(".col-span-full button");
+    const form = document.querySelector("form");
+  
+    submitButton.addEventListener("click", function () {
+      // Validate the form fields
+      if (form.checkValidity()) {
+        // If the form is valid, submit it
+        alert("submitted successfully")
+        form.submit();
+      } else {
+        // If the form is not valid, display an error message or perform other actions
+        alert("Please fill out all required fields.");
+      }
+    });
+  });
+
+
+
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent the form from submitting
+
+      // Get the values of the name, email, and message fields
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("textarea").value.trim();
+
+      // Check if the name, email, and message fields are not empty
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill out all fields.");
+      } else {
+        // If all fields are filled out, you can submit the form
+        alert("your form has been submitted")
+        form.submit();
+      }
+    });
+  });
+
   
